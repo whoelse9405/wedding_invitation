@@ -1,0 +1,67 @@
+.footer {
+  width: 100%;
+  background: linear-gradient(to top, var(--secondary-color), white);
+  padding: 60px 20px 40px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-message {
+  font-family: var(--font-kr-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.footer-names {
+  font-family: var(--font-kr-serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.footer-date {
+  font-family: var(--font-kr);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.footer-divider {
+  width: 80px;
+  height: 2px;
+  background-color: var(--primary-color);
+  margin: 30px auto;
+  opacity: 0.5;
+}
+
+.footer-copyright {
+  font-family: var(--font-kr);
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 20px;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 20px 30px;
+  }
+  
+  .footer-message {
+    font-size: 1.1rem;
+  }
+  
+  .footer-names {
+    font-size: 1rem;
+  }
+}
+

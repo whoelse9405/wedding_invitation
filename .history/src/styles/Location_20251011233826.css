@@ -1,0 +1,199 @@
+.location-section {
+  background-color: white;
+}
+
+.location-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.location-info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.venue-name {
+  font-family: var(--font-kr-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.venue-floor {
+  font-family: var(--font-kr);
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+  padding: 10px;
+}
+
+.info-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.info-text {
+  font-family: var(--font-kr);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: left;
+}
+
+.info-text.clickable {
+  color: var(--primary-color);
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.info-text.clickable:hover {
+  color: var(--accent-color);
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 30px 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--secondary-color), #e8d5d8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.map-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  filter: grayscale(30%);
+}
+
+.map-placeholder p {
+  font-family: var(--font-kr);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 5px 0;
+}
+
+.map-note {
+  font-size: 0.85rem !important;
+  color: var(--text-light) !important;
+  margin-top: 15px !important;
+}
+
+.map-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0 40px;
+  flex-wrap: wrap;
+}
+
+.map-buttons .btn {
+  flex: 1;
+  min-width: 140px;
+}
+
+.transportation-info {
+  background-color: var(--secondary-color);
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+.transport-title {
+  font-family: var(--font-kr-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.transport-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.transport-item {
+  text-align: center;
+}
+
+.transport-item strong {
+  font-family: var(--font-kr);
+  font-size: 1rem;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.transport-item p {
+  font-family: var(--font-kr);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+.parking-info {
+  text-align: center;
+}
+
+.parking-info p {
+  font-family: var(--font-kr);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+.parking-note {
+  font-size: 0.85rem !important;
+  color: var(--text-light) !important;
+  margin-top: 15px !important;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+  .venue-name {
+    font-size: 1.5rem;
+  }
+  
+  .transport-items {
+    grid-template-columns: 1fr;
+  }
+  
+  .transportation-info {
+    padding: 20px;
+  }
+  
+  .map-buttons {
+    flex-direction: column;
+  }
+  
+  .map-buttons .btn {
+    width: 100%;
+  }
+}
+

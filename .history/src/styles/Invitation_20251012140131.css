@@ -1,0 +1,73 @@
+/* Invitation 섹션 - 심플 디자인 */
+.invitation-section {
+  background-color: white;
+  padding: 100px 20px 80px;
+}
+
+.invitation-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.invitation-section.animate .invitation-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.invitation-title {
+  font-family: var(--font-kr);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #4a4a4a;
+  margin-top: 0;
+  margin-bottom: 50px;
+  padding-top: 0;
+  letter-spacing: 0.05em;
+}
+
+.invitation-message {
+  font-family: var(--font-kr);
+  font-size: 1rem;
+  font-weight: 300;
+  color: #6a6a6a;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .invitation-section {
+    padding: 80px 15px 60px;
+  }
+
+  .invitation-title {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+  }
+
+  .invitation-message {
+    font-size: 0.95rem;
+    line-height: 1.9;
+  }
+}
+
+@media (max-width: 480px) {
+  .invitation-section {
+    padding: 70px 10px;
+  }
+
+  .invitation-title {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+  }
+
+  .invitation-message {
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+}

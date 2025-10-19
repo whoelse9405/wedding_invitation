@@ -1,0 +1,143 @@
+.share-section {
+  background-color: white;
+  padding: 120px 20px 80px;
+}
+
+.share-content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.share-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s;
+}
+
+.share-section.animate .share-buttons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.share-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 35px;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-kr);
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+.share-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.share-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.share-text {
+  font-size: 1.05rem;
+  position: relative;
+  z-index: 1;
+}
+
+.share-arrow,
+.share-icon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.kakao-btn {
+  background: #FEE500;
+  color: #3c1e1e;
+}
+
+.kakao-btn:hover {
+  background: #FFD700;
+}
+
+.url-btn {
+  background: #b8c9a0;
+  color: white;
+}
+
+.url-btn:hover {
+  background: #a8b990;
+}
+
+.url-btn.copied {
+  background: #4caf50;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .share-section {
+    padding: 100px 20px 80px;
+  }
+  
+  .share-btn {
+    padding: 20px 30px;
+    font-size: 1rem;
+  }
+  
+  .share-text {
+    font-size: 1rem;
+  }
+  
+  .share-arrow,
+  .share-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .share-section {
+    padding: 80px 15px 80px;
+  }
+  
+  .share-btn {
+    padding: 18px 25px;
+    font-size: 0.95rem;
+  }
+  
+  .share-text {
+    font-size: 0.95rem;
+  }
+  
+  .share-arrow,
+  .share-icon {
+    width: 20px;
+    height: 20px;
+  }
+}

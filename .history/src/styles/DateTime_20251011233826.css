@@ -1,0 +1,169 @@
+.datetime-section {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, white 100%);
+}
+
+.datetime-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dday-counter {
+  padding: 40px 20px;
+  margin-bottom: 30px;
+}
+
+.dday-label {
+  font-family: var(--font-kr);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.dday-number {
+  font-family: var(--font-kr-serif);
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 10px 0;
+  text-shadow: 2px 2px 4px rgba(212, 165, 165, 0.2);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.dday-sublabel {
+  font-family: var(--font-en);
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-top: 10px;
+}
+
+.datetime-info {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  margin: 40px 0;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.datetime-item {
+  flex: 1;
+  text-align: center;
+}
+
+.datetime-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  filter: grayscale(30%);
+}
+
+.datetime-date {
+  font-family: var(--font-kr-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.datetime-day {
+  font-family: var(--font-kr);
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.datetime-time {
+  font-family: var(--font-kr-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.datetime-sublabel {
+  font-family: var(--font-kr);
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.calendar-mark {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.calendar-icon {
+  width: 120px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.calendar-icon:hover {
+  transform: translateY(-5px);
+}
+
+.calendar-header {
+  background-color: var(--primary-color);
+  color: white;
+  font-family: var(--font-en);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 8px;
+  letter-spacing: 2px;
+}
+
+.calendar-date {
+  font-family: var(--font-kr-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 20px;
+}
+
+/* 애니메이션 */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+  .dday-number {
+    font-size: 3rem;
+  }
+  
+  .datetime-info {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .datetime-icon {
+    font-size: 2rem;
+  }
+  
+  .datetime-date,
+  .datetime-time {
+    font-size: 1.1rem;
+  }
+  
+  .calendar-icon {
+    width: 100px;
+  }
+  
+  .calendar-date {
+    font-size: 2.5rem;
+    padding: 15px;
+  }
+}
+

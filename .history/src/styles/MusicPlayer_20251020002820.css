@@ -1,0 +1,100 @@
+/* 음악 컨트롤 버튼 */
+.music-control-btn {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  z-index: 1000;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.music-control-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.music-control-btn.muted {
+  background-color: rgba(224, 224, 224, 0.95);
+}
+
+.music-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-control-btn.muted .music-icon {
+  color: var(--text-light);
+}
+
+.music-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 애니메이션 효과 */
+@keyframes pulse-wave {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+.music-control-btn:not(.muted) .music-icon {
+  animation: pulse-wave 2s ease-in-out infinite;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .music-control-btn {
+    top: 25px;
+    right: 25px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .music-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .music-control-btn {
+    top: 20px;
+    right: 20px;
+    width: 34px;
+    height: 34px;
+  }
+  
+  .music-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* 큰 화면에서 섹션 최대 너비 고려 */
+@media (min-width: 769px) {
+  .music-control-btn {
+    right: calc((100vw - 600px) / 2 + 30px);
+  }
+}
+

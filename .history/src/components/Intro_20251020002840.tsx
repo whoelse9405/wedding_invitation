@@ -1,0 +1,43 @@
+import React from 'react';
+import '../styles/Intro.css';
+
+interface IntroProps {
+  musicButton?: React.ReactNode;
+}
+
+const Intro: React.FC<IntroProps> = ({ musicButton }) => {
+  return (
+    <section className="intro-section">
+      <div className="intro-container">
+        {/* 음악 버튼 */}
+        {musicButton}
+        
+        {/* 상단 텍스트 오버레이 */}
+        <div className="intro-text-overlay">
+          <h1 className="intro-names">
+            <span className="groom-name">DONGJIN</span>
+            <span className="name-divider">&</span>
+            <span className="bride-name">YEIN</span>
+          </h1>
+        </div>
+        
+        {/* 메인 이미지 */}
+        <div className="intro-image">
+          <img 
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" 
+            alt="Wedding Cover" 
+          />
+        </div>
+        
+        {/* 하단 정보 오버레이 */}
+        <div className="intro-info-overlay">
+          <p className="intro-date">2026년 1월 25일 토요일 오후 2시 30분</p>
+          <p className="intro-venue">아르베 웨딩</p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Intro;
+

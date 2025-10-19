@@ -1,0 +1,152 @@
+# 배포 가이드
+
+## GitHub Pages 배포 방법
+
+### 1. GitHub 저장소 생성
+1. GitHub에 로그인
+2. 새 저장소 생성 (예: `wedding-invitation`)
+3. Public 또는 Private 선택 (GitHub Pages는 둘 다 가능)
+
+### 2. GitHub Pages 설정
+1. 저장소 설정(Settings) → Pages 메뉴로 이동
+2. Source를 "GitHub Actions"로 설정
+
+### 3. 코드 Push
+```bash
+# Git 초기화
+git init
+
+# 파일 추가
+git add .
+
+# 커밋
+git commit -m "Initial commit: Wedding invitation"
+
+# 원격 저장소 연결
+git remote add origin https://github.com/YOUR_USERNAME/wedding_invitation_code.git
+
+# Push
+git branch -M main
+git push -u origin main
+```
+
+### 4. 자동 배포 확인
+- Push 후 Actions 탭에서 배포 진행 상황 확인
+- 배포 완료 후 `https://YOUR_USERNAME.github.io/wedding_invitation_code/` 에서 확인
+
+## 수동 배포 (gh-pages 사용)
+
+GitHub Actions를 사용하지 않고 수동으로 배포하려면:
+
+```bash
+# 빌드
+npm run build
+
+# gh-pages 브랜치로 배포
+npm run deploy
+```
+
+이 경우 GitHub Pages 설정에서 Source를 "Deploy from a branch"로 선택하고 
+Branch를 "gh-pages"로 설정해야 합니다.
+
+## 배포 URL 변경
+
+`vite.config.ts` 파일의 `base` 옵션을 수정하세요:
+
+```typescript
+export default defineConfig({
+  plugins: [react()],
+  base: '/YOUR_REPO_NAME/',  // 저장소 이름으로 변경
+})
+```
+
+커스텀 도메인을 사용하려면:
+1. `public/CNAME` 파일 생성
+2. 도메인 입력 (예: `wedding.example.com`)
+3. DNS 설정에서 CNAME 레코드 추가
+
+## 트러블슈팅
+
+### 페이지가 표시되지 않을 때
+1. `vite.config.ts`의 `base` 설정 확인
+2. GitHub Pages 설정에서 Source가 올바른지 확인
+3. Actions 탭에서 배포 로그 확인
+
+### 404 에러가 발생할 때
+- SPA의 경우 `public/404.html`을 `index.html`과 동일하게 만들거나
+- Hash router를 사용하는 것을 고려
+
+### 이미지가 표시되지 않을 때
+- 이미지 경로가 절대 경로인지 확인
+- `public/` 폴더에 이미지가 있는지 확인
+- 빌드 후 `dist/` 폴더에 이미지가 포함되었는지 확인
+
+## 개발 및 테스트
+
+```bash
+# 개발 서버 실행
+npm run dev
+
+# 프로덕션 빌드
+npm run build
+
+# 빌드 결과 미리보기
+npm run preview
+```
+
+## 이미지 교체 방법
+
+1. `public/images/main/` 폴더에 메인 커버 이미지 추가
+2. `public/images/gallery/` 폴더에 갤러리 이미지들 추가
+3. `src/components/Intro.tsx`에서 메인 이미지 경로 수정
+4. `src/components/Gallery.tsx`에서 갤러리 이미지 배열 수정
+
+## 정보 수정 방법
+
+### 결혼식 날짜 및 시간
+- `src/components/DateTime.tsx` 파일 수정
+
+### 신랑/신부 이름
+- `src/components/Intro.tsx` 파일 수정
+- `src/components/Invitation.tsx` 파일 수정
+
+### 예식장 정보
+- `src/components/Location.tsx` 파일 수정
+
+### 연락처 정보
+- `src/components/Contact.tsx` 파일 수정
+
+### 계좌번호
+- `src/components/Account.tsx` 파일 수정
+
+### 색상 테마
+- `src/styles/global.css` 파일의 `:root` 변수 수정
+
+## 추가 기능 구현
+
+### 카카오톡 공유
+1. https://developers.kakao.com 에서 앱 등록
+2. JavaScript Key 발급
+3. `index.html`에 Kakao SDK 스크립트 추가
+4. `src/utils/helpers.ts`의 `shareKakao` 함수에 Key 입력
+
+### 지도 API
+1. 네이버 지도 또는 카카오맵 API 키 발급
+2. `src/components/Location.tsx`에 지도 컴포넌트 추가
+
+### 방명록 (Google Forms)
+1. Google Forms에서 설문 양식 생성
+2. 공유 → 임베드 코드 복사
+3. `src/components/Guestbook.tsx`의 `googleFormUrl` 변수에 URL 입력
+
+### 방명록 (Firebase)
+1. Firebase 프로젝트 생성
+2. Firestore Database 설정
+3. Firebase SDK 설치: `npm install firebase`
+4. Firestore 읽기/쓰기 기능 구현
+
+## 라이선스
+
+MIT License
+
+

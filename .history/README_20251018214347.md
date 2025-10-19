@@ -1,0 +1,83 @@
+# 💒 모바일 청첩장
+
+반응형 모바일 청첩장 웹사이트
+
+## 🎯 프로젝트 정보
+
+- **결혼식 날짜**: 2026년 1월 25일 (토요일) 오후 2시 30분
+- **기술 스택**: React + TypeScript + Vite
+- **배포**: GitHub Pages
+
+## 🚀 시작하기
+
+### 설치
+
+```bash
+npm install
+```
+
+### 개발 서버 실행
+
+```bash
+npm run dev
+```
+
+### 빌드
+
+```bash
+npm run build
+```
+
+### 배포
+
+```bash
+npm run deploy
+```
+
+## 📁 프로젝트 구조
+
+```
+wedding_invitation_code/
+├── public/
+│   └── images/
+│       ├── main/          # 메인 커버 이미지
+│       └── gallery/       # 갤러리 이미지들
+├── src/
+│   ├── components/        # React 컴포넌트
+│   ├── styles/           # 스타일 파일
+│   ├── utils/            # 유틸리티 함수
+│   ├── App.tsx
+│   └── main.tsx
+└── PRD.md                # 프로젝트 요구사항 문서
+```
+
+## ✨ 주요 기능
+
+- ✅ 반응형 모바일 디자인
+- ✅ 결혼식 일정 및 D-Day 카운터
+- ✅ 위치 정보 및 지도
+- ✅ 이미지 갤러리 (라이트박스)
+- ✅ 연락처 정보
+- ✅ 계좌번호 (축의금)
+- ✅ 방명록
+- ✅ 카카오톡 공유 기능
+
+## 📝 이미지 교체 방법
+
+1. `public/images/main/` 폴더에 메인 커버 이미지를 추가합니다.
+2. `public/images/gallery/` 폴더에 갤러리 이미지들을 추가합니다.
+3. 이미지는 최적화하여 1MB 이하로 유지하는 것을 권장합니다.
+
+## 🔧 커스터마이징
+
+프로젝트의 정보를 수정하려면 다음 파일들을 편집하세요:
+
+- `src/App.tsx` - 전체 레이아웃 및 컴포넌트 구성
+- `src/components/` - 각 섹션별 컴포넌트
+- `src/styles/global.css` - 전역 스타일 및 테마 색상
+
+## 📄 라이선스
+
+MIT License
+
+

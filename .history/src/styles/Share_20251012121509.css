@@ -1,0 +1,232 @@
+/* Share 섹션 - 편지 봉투 애니메이션 */
+.share-section-envelope {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.envelope-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  perspective: 2000px;
+}
+
+/* 봉투 래퍼 */
+.envelope-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+}
+
+/* 봉투 뒷면 */
+.envelope-back {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.envelope-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+}
+
+/* 편지 내용 */
+.letter-content {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  background: white;
+  border-radius: 12px;
+  padding: 60px 40px 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  will-change: transform, opacity;
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+}
+
+/* 리본 장식 */
+.ribbon-decoration {
+  width: 100px;
+  margin: 0 auto 40px;
+}
+
+.ribbon-svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+}
+
+/* 버튼 컨테이너 */
+.share-buttons-new {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+  will-change: opacity;
+  transition: opacity 0.3s ease-out;
+}
+
+/* 공유 버튼 공통 */
+.share-btn-new {
+  width: 100%;
+  padding: 18px 30px;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-kr);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.share-btn-new:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.share-btn-new:active {
+  transform: translateY(-1px);
+}
+
+/* 카카오톡 버튼 */
+.kakao-btn-new {
+  background-color: #f9e54d;
+  color: #3c1e1e;
+}
+
+.kakao-btn-new:hover {
+  background-color: #f7dc3a;
+}
+
+/* URL 복사 버튼 */
+.url-btn-new {
+  background-color: #e8e8e8;
+  color: #4a4a4a;
+}
+
+.url-btn-new:hover {
+  background-color: #d8d8d8;
+}
+
+.url-btn-new.copied {
+  background-color: #b8c9a0;
+  color: white;
+}
+
+/* 하단 텍스트 */
+.share-footer {
+  text-align: center;
+  will-change: opacity;
+  transition: opacity 0.3s ease-out;
+}
+
+.share-domain {
+  font-family: var(--font-en-serif);
+  font-size: 0.9rem;
+  color: #c8c8c8;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* 봉투 상단 플랩 */
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+  pointer-events: none;
+}
+
+.envelope-flap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .share-section-envelope {
+    padding: 80px 15px;
+    min-height: 80vh;
+  }
+
+  .envelope-wrapper {
+    max-width: 400px;
+  }
+
+  .letter-content {
+    padding: 50px 30px 30px;
+    width: 90%;
+  }
+
+  .ribbon-decoration {
+    width: 80px;
+    margin-bottom: 30px;
+  }
+
+  .share-btn-new {
+    padding: 16px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .share-section-envelope {
+    padding: 60px 10px;
+    min-height: 70vh;
+  }
+
+  .envelope-wrapper {
+    max-width: 320px;
+  }
+
+  .letter-content {
+    padding: 40px 20px 25px;
+    width: 92%;
+    top: 25%;
+  }
+
+  .ribbon-decoration {
+    width: 70px;
+    margin-bottom: 25px;
+  }
+
+  .share-buttons-new {
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
+  .share-btn-new {
+    padding: 15px 20px;
+    font-size: 0.9rem;
+  }
+
+  .share-domain {
+    font-size: 0.85rem;
+  }
+}
+
+/* 애니메이션 성능 최적화 */
+.envelope-flap,
+.letter-content {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

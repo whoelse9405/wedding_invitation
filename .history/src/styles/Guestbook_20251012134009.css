@@ -1,0 +1,265 @@
+/* Guestbook 섹션 - 심플 디자인 */
+.guestbook-section {
+  background-color: white;
+  padding: 80px 20px;
+}
+
+.guestbook-title {
+  font-family: var(--font-en-serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: #4a4a4a;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.guestbook-content {
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.guestbook-section.animate .guestbook-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 방명록 폼 */
+.guestbook-form {
+  background-color: white;
+  border-radius: 16px;
+  padding: 35px 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.form-group.full {
+  flex: 1 1 100%;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-kr);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #6a6a6a;
+  margin-bottom: 8px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: var(--font-kr);
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #b8c9a0;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(184, 201, 160, 0.1);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 14px;
+  background-color: #b8c9a0;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-kr);
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.form-submit:hover {
+  background-color: #a8b990;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 201, 160, 0.3);
+}
+
+.form-submit:active {
+  transform: translateY(0);
+}
+
+/* 방명록 목록 */
+.guestbook-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.guestbook-item {
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  animation: slideIn 0.5s ease-out;
+}
+
+.guestbook-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.guestbook-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.guestbook-author {
+  font-family: var(--font-kr);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+.guestbook-date {
+  font-family: var(--font-kr);
+  font-size: 0.85rem;
+  color: #8a8a8a;
+}
+
+.guestbook-message {
+  font-family: var(--font-kr);
+  font-size: 0.95rem;
+  color: #6a6a6a;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* 빈 상태 */
+.guestbook-empty {
+  background-color: white;
+  border-radius: 12px;
+  padding: 50px 30px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.guestbook-empty p {
+  font-family: var(--font-kr);
+  font-size: 1rem;
+  color: #8a8a8a;
+}
+
+/* 애니메이션 */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .guestbook-section {
+    padding: 60px 15px;
+  }
+
+  .guestbook-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .guestbook-form {
+    padding: 30px 25px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .guestbook-section {
+    padding: 50px 10px;
+  }
+
+  .guestbook-title {
+    font-size: 1.8rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 30px;
+  }
+
+  .guestbook-form {
+    padding: 25px 20px;
+  }
+
+  .form-label {
+    font-size: 0.85rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .form-submit {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .guestbook-item {
+    padding: 20px;
+  }
+
+  .guestbook-author {
+    font-size: 0.95rem;
+  }
+
+  .guestbook-date {
+    font-size: 0.8rem;
+  }
+
+  .guestbook-message {
+    font-size: 0.9rem;
+  }
+
+  .guestbook-empty {
+    padding: 40px 20px;
+  }
+
+  .guestbook-empty p {
+    font-size: 0.95rem;
+  }
+}
