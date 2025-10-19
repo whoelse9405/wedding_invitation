@@ -8,7 +8,7 @@ import Location from './components/Location';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Account from './components/Account';
-import Guestbook from './components/Guestbook';
+// import Guestbook from './components/Guestbook';
 import Share from './components/Share';
 import Footer from './components/Footer';
 import Blank from './components/Blank';

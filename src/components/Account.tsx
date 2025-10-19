@@ -14,7 +14,7 @@ interface AccountInfo {
 
 const Account: React.FC = () => {
   const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2, triggerOnce: true });
-  const [copied, setCopied] = useState<string | null>(null);
+  const [, setCopied] = useState<string | null>(null);
   const [groomOpen, setGroomOpen] = useState(false);
   const [brideOpen, setBrideOpen] = useState(false);
 

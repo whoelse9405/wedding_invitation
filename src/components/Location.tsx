@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { openNaverMap, openKakaoMap, callPhone, copyToClipboard } from '../utils/helpers';
+import { openNaverMap, openKakaoMap, copyToClipboard } from '../utils/helpers';
 import '../styles/Location.css';
 
 declare global {
@@ -113,9 +113,9 @@ const Location: React.FC = () => {
     openKakaoMap(venueName, lat, lng);
   };
 
-  const handleCall = () => {
-    callPhone(venuePhone);
-  };
+  // const handleCall = () => {
+  //   callPhone(venuePhone);
+  // };
 
   const handleCopyAddress = async () => {
     const success = await copyToClipboard(venueAddress);
